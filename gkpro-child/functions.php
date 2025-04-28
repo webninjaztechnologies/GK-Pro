@@ -244,6 +244,7 @@ function remove_dashboard_links($links){
     // Remove specific links by uncommenting the lines below
     unset($links['reviews']);
     unset($links['wishlist']);
+    unset($links['calendar']);
     return $links;
 }
 
