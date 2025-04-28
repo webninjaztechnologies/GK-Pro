@@ -382,6 +382,11 @@ do_action( 'tutor_dashboard/before/wrap' );
 
 			<div class="tutor-col-12 tutor-col-md-6 tutor-col-lg-8 tutor-bcg">
 				<div class="tutor-dashboard-content">
+				<h2>Welcome back, <?php echo wp_get_current_user()->display_name; ?></h2>
+				<div class="cut-charts">
+				<canvas id="barChart"></canvas>
+				<div id="radialChart"></div>
+				</div>
 					<?php
 
 					if ( $dashboard_page_name ) {

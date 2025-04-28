@@ -37,7 +37,7 @@ function enqueue_custom_script1(){
     wp_enqueue_script('jquery-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', array('jquery'), null, true);
     wp_enqueue_script('bootstrap-cdn', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', array('jquery'), null, true);
     wp_enqueue_script('owl-carousel-script', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', array('jquery'), null, true);
-    wp_enqueue_script('owl-carousel-script', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', array('jquery'), null, true);
+    wp_enqueue_script('chart-script', 'https://cdn.jsdelivr.net/npm/chart.js', array('jquery'), null, true);
     wp_enqueue_script('global-script', get_template_directory_uri() . '/assets/js/home.js', array('jquery'), null, true);
     wp_localize_script('global-script', 'localize_data', array(
         'site_url' => get_site_url()
@@ -181,15 +181,6 @@ function footer_social_settings1($wp_customize) {
 }
 add_action('customize_register', 'footer_social_settings1');
 
-// add_action('template_redirect', function() {
-//     if (trim($_SERVER['REQUEST_URI'], '/') === 'dashboard/retrieve-password') {
-//         wp_redirect(home_url('/retrieve-password/'));
-//         exit;
-//     }
-// });
-// Shortcode to display courses in custom layout
-// 
-
 
 function custom_theme_customize_register( $wp_customize ) {
 
@@ -214,51 +205,16 @@ function custom_theme_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'custom_theme_customize_register' );
 
-// add_filter('tutor_dashboard/nav_items', 'add_custom_dashboard_link', 11);
-// function add_custom_dashboard_link($links) {
-//     $custom_link = [
-//         'custom_link' => [
-//             "title" => __('Course Content', 'tutor'),
-//             "url" => "https://your-specific-page-url.com",
-//             "icon" => "tutor-icon-calender-line",
-//         ]
-//     ];
-//     return array_slice($links, 0, 1, true) + $custom_link + array_slice($links, 1, null, true);
-// }
-
-
-// add_filter('tutor_dashboard/nav_items', 'add_custom_dashboard_link', 11);
-// function add_custom_dashboard_link($links) {
-// $custom_link = [
-// 'custom_link' => [
-// "title" => __('Custom Link', 'tutor'),
-// "url" => get_permalink(get_user_meta(get_current_user_id(), 'custom_page_id', true)),
-// "icon" => "tutor-icon-calender-line",
-// ]
-// ];
-// return array_slice($links, 0, 1, true) + $custom_link + array_slice($links, 1, null, true);
-// }
 
 add_filter('tutor_dashboard/nav_items', 'remove_dashboard_links');
 function remove_dashboard_links($links){
-    // Remove specific links by uncommenting the lines below
     unset($links['reviews']);
     unset($links['wishlist']);
     unset($links['calendar']);
     return $links;
 }
 
-// add_filter('tutor_dashboard/nav_items', 'add_custom_dashboard_link');
-// function add_custom_dashboard_link($links){
-//   $links['live_classes'] = [
-//     "title" => __('Live Classes', 'tutor'),
-//     "url" => "live_classes",
-//     "icon" => "tutor-icon-calender-line",
-//   ];
-//   return $links;
-// }
 
-// Add the Live Classes tab to dashboard navigation
 add_filter('tutor_dashboard/nav_items', function($items) {
     $items['live-classes'] = [
         'title' => __('Live Classes', 'tutor'),
@@ -269,71 +225,18 @@ add_filter('tutor_dashboard/nav_items', function($items) {
     return $items;
 });
 
-// // Register the endpoint for proper routing
-// add_filter('tutor_dashboard_endpoints', function($endpoints) {
-//     $endpoints['live-classes'] = [
-//         'title' => __('Live Classes', 'tutor'),
-//         'auth_cap' => tutor()->student_role
-//     ];
-//     return $endpoints;
-// });
-
-
-
-// add_filter( 'tutor_dashboard/nav_items', 'add_live_classes_tab_to_student_dashboard' );
-
-// function add_live_classes_tab_to_student_dashboard( $items ) {
-//     $items['live-classes'] = array(
-//         'title' => __( 'Live Classes', 'tutor-pro' ),
-//         'icon'  => 'dashicons-video-alt2', // You can change the icon
-//         'url'   => tutor_utils()->get_tutor_dashboard_page_permalink( 'live-classes' ),
-//         'order' => 45, // Position in the sidebar
-//     );
-
-//     return $items;
-// }
-
-// add_filter( 'tutor_dashboard_tabs', 'add_live_classes_tab_for_students' );
-
-// function add_live_classes_tab_for_students( $tabs ) {
-//     // Only for students
-//     if ( tutor_utils()->get_user_role( get_current_user_id() ) == 'student' ) {
-//         $tabs['live_classes'] = [
-//             'title' => __( 'Live Classes', 'tutor' ),
-//             'url'   => '#',  // Add the URL to your custom live classes page
-//             'icon'  => 'tutor-icon-timetable',  // Optional: You can change this icon
-//         ];
-//     }
-
-//     return $tabs;
-// }
-
-
-// add_action( 'tutor_dashboard/live-classes', 'load_custom_live_classes_template' );
-
-// function load_custom_live_classes_template() {
-//     tutor_load_template( 'dashboard.live-classes' );
-// }
-
-
-// in your child‐theme’s functions.php
 
 add_action( 'wp_enqueue_scripts', function(){
-    if ( ! is_user_logged_in() ) return; // Ensure it's only for logged-in users
-  
-    // Set the base path for Tutor-Pro plugin assets
+    if ( ! is_user_logged_in() ) return; 
     $base = plugin_dir_url( WP_PLUGIN_DIR . '/tutor-pro/tutor-pro.php' ) . 'addons/calendar/assets/';
-  
-    // 1) Enqueue the JavaScript for the calendar
     wp_enqueue_script(
       'tutor-pro-calendar',
       $base . 'js/Calendar.js',
-      [ 'react', 'react-dom' ], // React is already loaded by Tutor-Pro
-      '3.4.2', // Use the version you're using
-      true // Load in footer
+      [ 'react', 'react-dom' ], 
+      '3.4.2',
+      true 
     );
   
-    // 2) Enqueue the CSS for the calendar
     wp_enqueue_style(
       'tutor-pro-calendar-css',
       $base . 'css/calendar.css',
@@ -341,7 +244,6 @@ add_action( 'wp_enqueue_scripts', function(){
       '3.4.2'
     );
   
-    // 3) Localize the script with the necessary AJAX data
     wp_localize_script( 'tutor-pro-calendar', 'tutorCalendarData', [
       'ajax_url'    => admin_url( 'admin-ajax.php' ),
       'tutor_nonce' => wp_create_nonce( 'tutor_calendar' ),
@@ -363,72 +265,17 @@ add_action( 'wp_enqueue_scripts', function(){
 
 
 //   course content tab
-
-// // Add Course Content tab to Tutor LMS Dashboard
 add_filter('tutor_dashboard/nav_items', function($items) {
     $items['course-content'] = [
         'title' => __('Course Content', 'tutor'),
-        'icon' => 'dashicons-welcome-learn-more', // You can choose a different icon
+        'icon' => 'dashicons-welcome-learn-more', 
         'url' => tutor_utils()->get_tutor_dashboard_page_permalink('course-content'),
-        'order' => 10, // Change order as needed
+        'order' => 10,
     ];
     return $items;
 });
 
-// add_filter('tutor_dashboard/nav_items', function($items) {
-//     if (current_user_can('tutor_student')) {
-//         $items['course-content'] = [
-//             'title' => __('Course Content', 'tutor'),
-//             'icon' => 'dashicons-welcome-learn-more',
-//             'url' => tutor_utils()->get_tutor_dashboard_page_permalink('course-content'),
-//             'order' => 10,
-//         ];
-//     }
-//     return $items;
-// });
-// add_filter('tutor_dashboard/template_path', function($template_path, $template, $slug) {
-//     if ($slug === 'course-content') {
-//         $custom_template = get_stylesheet_directory() . '/tutor/dashboard/course-content.php';
-//         if (file_exists($custom_template)) {
-//             return $custom_template;
-//         }
-//     }
-//     return $template_path;
-// }, 10, 3);
-// 1. Add “Course Content” to the dashboard nav—*students only*
-// add_filter( 'tutor_dashboard/nav_items', function( $items ) {
-//     if ( current_user_can( 'tutor_student' ) ) {
-//         $items['course-content'] = [
-//             'title' => __( 'Course Content', 'tutor' ),
-//             'icon'  => 'dashicons-welcome-learn-more',
-//             'url'   => tutor_utils()->get_tutor_dashboard_page_permalink( 'course-content' ),
-//             'order' => 20,
-//         ];
-//     }
-//     return $items;
-// });
 
-// // 2. Register the endpoint so Tutor will route “/dashboard/course-content/” correctly
-// add_filter( 'tutor_dashboard_endpoints', function( $endpoints ) {
-//     $endpoints['course-content'] = [
-//         'title'    => __( 'Course Content', 'tutor' ),
-//         'auth_cap' => '',  // no extra capability required beyond the nav_items restriction
-//     ];
-//     return $endpoints;
-// });
-
-// // 3. Tell Tutor *which template* to load when someone hits that tab
-// add_action( 'tutor_dashboard/content/course-content', function() {
-//     $tpl = get_stylesheet_directory() . '/tutor/dashboard/course-content.php';
-//     if ( file_exists( $tpl ) ) {
-//         include $tpl;
-//     } else {
-//         echo '<p><strong>Template not found:</strong> ' . esc_html( $tpl ) . '</p>';
-//     }
-// });
-
-// <?php
-// 1) Add the “Course Content” menu item—students only
 add_filter( 'tutor_dashboard/nav_items', function( $items ) {
     if ( current_user_can( 'tutor_student' ) ) {
         $items['course-content'] = [
@@ -440,16 +287,15 @@ add_filter( 'tutor_dashboard/nav_items', function( $items ) {
     }
     return $items;
 });
-// 2) Register the endpoint so Tutor will route “/dashboard/course-content/”
+
 add_filter( 'tutor_dashboard_endpoints', function( $endpoints ) {
     $endpoints['course-content'] = [
         'title'    => __( 'Course Content', 'tutor' ),
-        'auth_cap' => '',  // no extra cap needed
+        'auth_cap' => '', 
     ];
     return $endpoints;
 });
 
-// 3) Tell Tutor *which* template to load when that tab is clicked
 add_action( 'tutor_dashboard/content/course-content', function() {
     $tpl = get_stylesheet_directory() . '/tutor/dashboard/course-content.php';
     if ( file_exists( $tpl ) ) {

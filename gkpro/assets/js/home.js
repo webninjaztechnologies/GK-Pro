@@ -697,3 +697,49 @@ $('.dash-toggle').on('click', function(){
                   $(this).closest('.accordion-item').addClass('active');
                 });
               });
+              const ctx = document.getElementById('barChart').getContext('2d');
+              new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                      datasets: [
+                          {
+                              label: 'Study',
+                              data: [30, 60, 50, 40, 35, 32],
+                              backgroundColor: '#4C6FFF'
+                          },
+                          {
+                              label: 'Tests',
+                              data: [20, 30, 25, 30, 28, 29],
+                              backgroundColor: '#F89B4F'
+                          }
+                      ]
+                  },
+                  options: {
+                      responsive: true,
+                      plugins: {
+                          legend: {
+                              position: 'top'
+                          }
+                      }
+                  }
+              });
+
+              var options = {
+                chart: {
+                  height: 350,
+                  type: 'radialBar',
+                },
+                series: [70], // 70% Progress
+                labels: ['Course Progress'],
+                colors: ['#34C38F'],
+              };
+              
+              var chart = new ApexCharts(document.querySelector("#radialChart"), options);
+              chart.render();
+
+
+
+
+
+    
