@@ -438,7 +438,6 @@ add_filter( 'tutor_dashboard/nav_items', function( $items ) {
     }
     return $items;
 });
-
 // 2) Register the endpoint so Tutor will route “/dashboard/course-content/”
 add_filter( 'tutor_dashboard_endpoints', function( $endpoints ) {
     $endpoints['course-content'] = [
