@@ -459,6 +459,17 @@ add_action( 'tutor_dashboard/content/course-content', function() {
 });
 
 
+add_filter('tutor_dashboard/nav_items', function($items) {
+    $items['Mock Test'] = [
+        'title' => __('Mock Test', 'tutor'),
+        'icon' => 'dashicons-video-alt3',
+        'url' => tutor_utils()->get_tutor_dashboard_page_permalink('mock-test'),
+        'order' => 99
+    ];
+    return $items;
+});
+
+
 
 
 
