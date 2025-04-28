@@ -1,0 +1,762 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+input:focus{
+    box-shadow: none !important;
+    outline: none;
+}
+.login-carousel img{
+    width: auto !important;
+    margin: 0 auto;
+}
+.login-body{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.login-body .login-content{
+    flex: 0 0 50%;
+    /* text-align: center; */
+    max-width: 50%;
+}
+.login-body .login-content1{
+    flex: 0 0 50%;
+    background: #F8F8F8;
+    /* text-align: center; */
+    max-width: 50%;
+    padding: 126px 0;
+}
+.login-carousel .owl-dots{
+    display: block;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+}
+.login-carousel .owl-dots button{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #FFD0B6;
+    border: none;
+    margin: 0 4px;
+}
+.login-carousel .owl-dots button.active{
+    background: #C23743;
+    /* border: 1px solid #C23743; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-carousel .owl-dots button.active::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    /* background-color: #fff; */
+    border: 1px solid #C23743;
+}
+.owl-carousel.login-carousel {
+    display: block;
+    overflow: auto;
+    padding-top: 0;
+}
+.login-text{
+    max-width: 604px;
+    margin: 0 auto;
+}
+.login-text h3{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: #000929;
+    margin-top: 32px;
+}
+.login-text p{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: #000929;
+    margin-bottom: 0;
+    padding: 0 20px;
+}
+#tutor-registration-wrap{
+    box-shadow: unset !important;
+}
+
+.tutor-form-group label, .tutor-login-form-wrapper label{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: #1A1D1F;
+    margin-bottom: 8px;
+}
+.login-content .tutor-btn, .tutor-login-form-wrapper .tutor-btn.tutor-btn-block{
+    padding: 12px 20px;
+    border-radius: 12px;
+    background: #C23743;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #fbfbfb;
+    border: none;
+}
+.login-content .tutor-btn:hover, .tutor-login-form-wrapper .tutor-btn.tutor-btn-block:hover{
+    background: #0b0d50;
+}
+.login-content h2{
+    text-align: center;
+}
+/* .tutor-wrap{
+    padding: 80px 0;
+} */
+/* .tutor-dashboard .tutor-dashboard-left-menu .tutor-dashboard-permalinks{
+   
+} */
+.logged-in footer{
+    display: none;
+}
+.tutor-btn-ghost{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: #FF6A55;    
+}
+.tutor-btn.tutor-btn-link{
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: #FF6A55;
+}
+.tutor-fs-5.tutor-color-black{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0%;
+    /* text-align: center; */
+    vertical-align: middle;
+    color: #1A1D1F;    
+}
+.tutor-course-progress-item-title {
+    text-align: left !important;
+}
+.tutor-color-secondary.tutor-fs-6{
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: #1A1D1F;    
+}
+.tutor-forgot-password-form{
+    padding: 80px 0 !important;
+}
+.tutor-forgot-password-form p{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #1A1D1F;
+    margin-bottom: 20px;
+}
+.tutor-reset-password-form{
+    padding: 80px 0 !important;
+}
+.tutor-form-group {
+    margin-bottom: 24px !important;
+}
+/* dashboard css */
+.tutor-dashboard .tutor-dashboard-left-menu .tutor-dashboard-permalinks li.active a {
+    background-color: #FFF6F0;
+    color: #1A1D1F;
+}
+.tutor-dashboard .tutor-dashboard-left-menu .tutor-dashboard-permalinks li.active a:hover {
+    background-color: #FFF6F0 !important;
+}
+.tutor-dashboard .tutor-dashboard-left-menu .tutor-dashboard-permalinks li a:hover {
+    background-color: #FFF6F0 !important;
+}
+.tutor-dashboard .tutor-dashboard-left-menu .tutor-dashboard-menu-item.active a .tutor-dashboard-menu-item-icon {
+    color: #C23743 !important;
+}
+.tutor-dashboard .tutor-dashboard-left-menu .tutor-dashboard-menu-item-link{
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #1A1D1F;
+    padding: 16px 32px !important;
+    border-radius: 8px !important;
+}
+.tutor-dashboard .tutor-dashboard-left-menu .tutor-dashboard-menu-item-icon {
+    font-size: 20px;
+    color: #1A1D1F;
+}
+.tutor-dashboard .tutor-dashboard-left-menu .tutor-dashboard-menu-item:not(:last-child) {
+    margin-bottom: 0 !important;
+}
+.tutor-dashboard-menu-divider, .tutor-dashboard-menu-divider-header{
+    display: none !important;
+}
+.tutor-dashboard .tutor-frontend-dashboard-maincontent ul.tutor-dashboard-permalinks:before,
+.tutor-dashboard .tutor-frontend-dashboard-header:after{
+    display: none !important;
+}
+.tutor-dashboard .tutor-dashboard-left-menu .tutor-dashboard-permalinks{
+    padding: 0 !important;
+    margin-right: 0;
+    height: calc(100% - 40px) !important;
+    margin-bottom: 0 !important;
+}
+.tutor-frontend-dashboard-maincontent .tutor-col-md-8.tutor-col-lg-9{
+    background: #F6F7F9 !important;
+    border-radius: 8px;
+}
+.tutor-bcg {
+    background: #F6F7F9;
+}
+.tutor-dashboard-content{
+    padding: 20px;
+}
+.tutor-dashboard-content-inner{
+    background: #fff;
+    border-radius: 24px;
+    padding: 24px;
+}
+.tutor-dashboard-title{
+    text-align: left !important;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    display: none;
+}
+.dash-logo{
+    padding-left: 36px;
+}
+.dash-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+}
+.dash-header .tutor-row{
+    width: 100%;
+}
+.dash-course-name h1{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    color: #1A1D1F;
+}
+.dash-right-content{
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-left: 1px solid #F4F4F4;
+    padding: 0 40px;
+}
+.std-dash-box{
+    display: none;
+    position: absolute;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+    width: 110px;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.std-dash-box h3{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: #1A1D1F;
+    margin: 0;
+    margin-bottom: 5px;
+}
+.std-dash-box a{
+    text-decoration: none;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    vertical-align: middle;
+    color: #6F767E;
+}
+.dash-student-details{
+    display: flex;
+    align-items: center;
+}
+.dash-student-profile{
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    border-left: 1.5px solid #6F767E;
+}
+.dash-student-details button{
+    background: transparent;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid #6F767E;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right: 16px;
+}
+.dash-student-profile button{
+    border: none;
+    width: 24px;
+}
+.notification-count{
+    width: 12px;
+    height: 12px;
+    background: #FF6A55;
+    border-radius: 50%;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 8px;
+    letter-spacing: 0%;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.std-dash-box.show {
+    display: block;
+    z-index: 1;
+}
+.avt-img{
+    position: relative;
+}
+/* .tutor-container1 .tutor-row.tutor-d-flex:first-child{
+    display: none !important;
+} */
+.stu-dash-page .stu-det-sec.tutor-row{
+    display: none !important;
+} 
+.stu-dash-page .tutor-container{
+    max-width: 100% !important;
+}
+.logged-in header{
+    display: none;
+}
+.student-avatar .avatar{
+    border-radius: 50%;
+}
+.std-dash-logout{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding-left: 32px; */
+    padding-right: 12px;
+    padding-top: 20px;
+}
+.std-dash-logout .std-info {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.std-info-text h3{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #1A1D1F;
+    margin-bottom: 1px;
+}
+.std-info-text p{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #1A1D1F;
+    margin-bottom: 0;
+}
+.notification-count p{
+    margin-bottom: 0;
+}
+.dash-student-details button.dash-toggle {
+    margin-right: 0;
+}
+.login-page-temp .cust-signin-heading{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    color: #1A1D1F;
+    margin-bottom: 8px;
+}
+.login-page-temp .welcome-msg{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #1A1D1F;
+}
+.login-content.login-page-temp .tutor-btn{
+    background: transparent;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: #FF6A66;
+}
+.login-content.login-page-temp .tutor-btn:hover{
+    color: #C23743;
+}
+.login-content.login-page-temp .tutor-login-wrap{
+    box-shadow: unset;
+}
+.login-content.login-page-temp button.tutor-btn{
+    background: #C23743;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #fbfbfb;
+}
+.login-content.login-page-temp button.tutor-btn:hover{
+    color: #fbfbfb;
+}
+.login-content.login-page-temp #tutor-login-form .tutor-btn-link:hover:after{
+    display: none;
+}
+.login-content.login-page-temp #tutor-login-form .tutor-btn-link:hover{
+    color: #C23743;
+}
+.login-content.login-page-temp .tutor-login-form-wrapper{
+    padding: 24px 0;
+}
+.tutor-form-row input, .tutor-login-form-wrapper input:not([type="checkbox"]){
+    background: #F4F4F4 !important;
+    padding: 16px !important;
+    border-radius: 12px !important;
+    border: none !important;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 14px !important;
+    line-height: 100% !important;
+    letter-spacing: 0px;
+    color: #9A9FA5;
+    margin-bottom: 16px !important;
+}
+.tutor-form-row input::placeholder, .tutor-login-form-wrapper input::placeholder{
+    color: #9A9FA5 !important;
+}
+.tutor-login-form-wrapper input.login-mail{
+    background: #F4F4F4 url(../images/gmail.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: left 16px center !important;
+    background-size: 20px;
+    padding-left: 46px !important;
+    border: 2px solid #9A9FA5;
+    color: #1A1D1F;
+}
+.tutor-login-form-wrapper input.login-pass{
+    background: #F4F4F4 url(../images/lock.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: left 16px center !important;
+    background-size: 20px;
+    padding-left: 46px !important;
+    position: relative;
+    border: 2px solid #9A9FA5;
+    color: #1A1D1F;
+}
+.register-form .first-name{
+    background: #F4F4F4 url(../images/gmail.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: left 16px center !important;
+    background-size: 20px !important;
+    padding-left: 30px !important;
+    color: #1A1D1F;
+}
+.register-form .last-name{
+    background: #F4F4F4 url(../images/gmail.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: left 16px center !important;
+    background-size: 20px !important;
+    padding-left: 30px !important;
+    color: #1A1D1F;
+}
+.register-form .user-name{
+    background: #F4F4F4 url(../images/gmail.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: left 16px center !important;
+    background-size: 20px !important;
+    padding-left: 30px !important;
+    color: #1A1D1F;
+}
+.register-form .reg-email{
+    background: #F4F4F4 url(../images/gmail.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: left 16px center !important;
+    background-size: 20px !important;
+    padding-left: 30px !important;
+    color: #1A1D1F;
+}
+.register-form .password-checker{
+    background: #F4F4F4 url(../images/lock.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: left 16px center !important;
+    background-size: 20px !important;
+    padding-left: 30px !important;
+    position: relative;
+    color: #1A1D1F;
+}
+.register-form .conf-password{
+    background: #F4F4F4 url(../images/lock.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: left 16px center !important;
+    background-size: 20px !important;
+    padding-left: 30px !important;
+    position: relative;
+    color: #1A1D1F;
+}
+.pass-login-div{
+    position: relative;
+}
+.pass-hide-show{
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+.page-template-login header, .page-template-login footer{
+    display: none;
+}
+.notification-div #tutor-notifications-wrapper{
+    margin-right: 0;
+}
+.notification-div .tutor-icon-bell-bold:before{
+    color: #6F767E !important;
+}
+.notification-div .tutor-iconic-btn-secondary:hover{
+    background: transparent !important;
+    border: 1.5px solid #6F767E;
+}
+
+.notification-div .tutor-iconic-btn-secondary .tutor-floating-badge{
+    right: -2px;
+    top: 0px;
+    min-width: 12px !important;
+    min-height: 12px !important;
+    background: #FF6A55 !important;
+    font-family: Inter !important;
+    font-weight: 500 !important;
+    font-size: 8px !important;
+    line-height: 8px !important;
+    color: #fff !important;
+}
+.rt-password .rt-pass{
+    flex: 0 0 50%;
+}
+.enrolled-courses .tutor-course-card .tutor-card-body{
+    padding: 20px !important;
+}
+.enrolled-courses .tutor-course-card .tutor-card-body .tutor-course-name {
+    margin-top: 0px;
+    margin-bottom: 24px !important;
+}
+.enrolled-courses .tutor-course-card .tutor-card-body .tutor-course-name a{
+    text-decoration: none;
+}
+.dash-cal-content .tutor-calendar-wrapper{
+    overflow: auto;
+}
+.dash-cal-content .tutor-calendar-wrapper .tutor-calendar-body .space {
+    display: none;
+}
+.ds-con-tab .tutor-course-details-content{
+    display: none;
+}
+.ds-con-tab .tutor-tab-item .tutor-btn-show-more {
+    display: none;
+}
+
+
+
+
+
+@media (max-width: 1366px){
+    .dash-right-content{
+        border-left: unset;
+    }
+}
+@media (max-width:1200px){
+    .std-dash-logout{
+        display: none;
+    }
+    .tutor-dashboard .tutor-dashboard-left-menu .tutor-dashboard-menu-item-link{
+        padding: 10px 12px !important;
+    }
+    .dash-course-name h1{
+        display: none;
+    }
+    .dash-course-name h1{
+        display: none;
+    }
+    .tutor-row.tutor-frontend-dashboard-maincontent {
+        --tutor-gutter-x: unset !important;
+    }
+}
+@media (max-width:1024px){
+    .rt-password .rt-pass{
+        padding: 0 25px;
+    }
+    .login-text h3 {
+        font-size: 30px;
+        line-height: 38px;
+    }
+    .rt-password .login-content1{
+        padding: 46px 0;
+    }
+}
+@media (max-width:767px){
+    .login-page.rt-password .login-body{
+        flex-direction: column;
+    }
+    .rt-password .login-content1{
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 26px 0
+    }
+    .rt-password .rt-pass{
+        flex: 0 0 100%;
+        padding: 0 15px;
+    }
+    .tutor-frontend-dashboard-course-progress{
+        margin-top: 24px;
+    }
+    .tutor-frontend-dashboard.tutor-dashboard-student.tutor-pb-80{
+        padding-bottom: 0 !important;
+    }
+    .dash-course-name{
+        display: none;
+    }
+    .dash-right-content{
+        padding-right: 0;
+        justify-content: end;
+        border-left: unset;
+    }
+    .dash-header .tutor-row {
+        align-items: center;
+    }
+    .dash-student-details button {
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+    }
+    .dash-student-profile {
+        padding-left: 5px;
+    }
+    .student-avatar .avatar {
+        width: 30px;
+        height: 30px;
+    }
+    .dash-logo {
+        padding-left: 30px;
+    }
+    .notification-count {
+        top: -3px;
+        right: -5px;
+    }
+    .dash-student-details button.dash-toggle {
+        width: 20px;
+        height: 20px;
+    }
+    .std-dash-box {
+        right: 0;
+        top: 40px;
+        left: unset;
+    }
+    .tutor-fs-5.tutor-color-black {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    .std-dash-box h3 {
+        font-size: 14px;
+        line-height: 100%;
+    }
+    .std-dash-box a {
+        font-size: 12px;
+        line-height: 110%;
+    }
+    .tutor-dashboard-content {
+        margin-bottom: 0;
+    }
+    .popular-courses-heading-dashboard{
+        margin-top: 24px;
+    }
+    .dash-course-name{
+        display: none;
+    }
+    .dash-right-content {
+        justify-content: end;
+        border-left: unset;
+    }
+    .dash-course-name h1{
+        display: none;
+    }
+}

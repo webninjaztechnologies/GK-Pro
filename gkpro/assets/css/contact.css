@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --heading-font: "Urbanist", serif;
+    --text-font:  "Manrope", serif;
+}
+@media (min-width:1200px){
+    .courdet-body-sec .container {
+        max-width: 1128px;
+        padding: 0 20px;
+    }
+}
+@media (min-width: 1366px) {
+    .container {
+        max-width: 1296px;
+        padding: 0;
+    }
+}
+img{
+    max-width: 100%;
+}
+input:focus{
+    outline: none;
+    box-shadow: none;
+}
+textarea:focus, .form-control:focus{
+    outline: none;
+    box-shadow: none;
+    border-color: #D5D5D6;
+}
+select:focus{
+    outline: none;
+    box-shadow: none;
+}
+button:focus{
+    box-shadow: none;
+    outline: none;
+}
+.abt-banner{
+    background: url(../images/course-detail-banner-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.abt-banner .banner-img {
+    margin-right: -50px;
+    margin-bottom: -40px;
+}
+
+.get-in-touch{
+    padding: 80px 0;
+}
+.git-content{
+    max-width: 800px;
+    margin: 0 auto;
+}
+.git-header{
+    text-align: center;
+    margin-bottom: 48px;
+}
+.git-header h3{
+    font-family: var(--heading-font);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: #C23743;
+    margin-bottom: 4px;
+}
+.git-header h4{
+    font-family: var(--heading-font);
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 57.6px;
+    color: #000929;
+    margin-bottom: 0;
+}
+.git-header h4 span{
+    color: #C23743;
+    font-style: italic;
+}
+.contact-form-div{
+    box-shadow: 3.8px 3.8px 28.14px 0px #0000000D;
+    padding: 32px;
+    border-radius: 32px;
+    margin-bottom: 48px;
+}
+.contact-form-div .input-div{
+    margin-bottom: 24px;
+}
+.contact-form-div label{
+    font-family: var(--text-font);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27.32px;
+    letter-spacing: 0px;
+    color: #000;
+    margin-bottom: 12px;
+}
+.contact-form-div input{
+    border: 1px solid #D5D5D6;
+    padding: 20px 24px;
+    border-radius: 12px;
+    font-family: var(--text-font);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21.86px;
+    letter-spacing: 0px;
+    color: #848484;
+}
+.contact-form-div textarea{
+    border: 1px solid #D5D5D6;
+    padding: 20px 24px;
+    border-radius: 12px;
+    font-family: var(--text-font);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21.86px;
+    letter-spacing: 0px;
+    color: #848484;
+    height: 200px;
+}
+.contact-form-div input::placeholder, .contact-form-div textarea::placeholder{
+    color: #848484;
+}
+.contact-form-div .submit{
+    background: #C23743;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-family: var(--text-font);
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: center;
+    border: none;
+    color: #fff;
+    transition: .5s;
+}
+.contact-form-div .submit:hover{
+    background: #0B0D50;
+}
+.contact-detail h3{
+    font-family: var(--text-font);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 32.4px;
+    letter-spacing: 0px;
+    color: #000;
+    margin-bottom: 18px;
+}
+.contact-detail ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.contact-detail ul li{
+    margin-bottom: 12px;
+}
+.contact-detail ul li a{
+    font-family: var(--text-font);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28.8px;
+    letter-spacing: 0px;
+    color: #848484;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.contact-detail ul li a img{
+    margin-right: 10px;
+}
+
+@media (max-width: 1440px) {
+    .abt-banner .banner-img {
+        margin-right: -20px;
+    }
+}
+@media (max-width: 1366px) {
+    .abt-banner .banner-img {
+        margin-right: 0px;
+    }
+}
+@media (max-width:1024px){
+    .get-in-touch {
+        padding: 60px 0;
+    }
+}
+@media (max-width:767px){
+    .abt-banner .banner-img {
+        margin-bottom: -30px;
+    }
+    .get-in-touch {
+        padding: 40px 0;
+    }
+    .git-header {
+        margin-bottom: 28px;
+    }
+    .git-header h4 {
+        font-size: 34px;
+        line-height: 43.6px;
+    }
+    .contact-form-div {
+        padding: 20px;
+        margin-bottom: 28px;
+    }
+    .contact-form-div label {
+        font-size: 18px;
+        line-height: 25.32px;
+        margin-bottom: 8px;
+    }
+    .contact-form-div input, .contact-form-div textarea {
+        padding: 15px 18px;
+        font-size: 15px;
+        line-height: 20.86px;
+    }
+    .contact-form-div textarea{
+        height: 150px;
+    }
+    .contact-form-div .submit {
+        padding: 14px 32px;
+        font-size: 15px;
+        line-height: 23px;
+    }
+    .contact-detail h3{
+        margin-bottom: 10px;
+    }
+    .our-course-content h1 {
+        margin-top: 50px;
+    }
+}
