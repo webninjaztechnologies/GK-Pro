@@ -14,7 +14,6 @@
                         $ielts_text = get_theme_mod('ielts_text', 'Achieve your dreams with GK PRO Academy, a trusted platform for IELTS preparation. We combine expert guidance, innovative tools, and flexible learning options to help students worldwide excel in their IELTS exams.');
                         echo '<p>' . esc_html($ielts_text) . '</p>';
                     ?>
-
                 </div>
                 <div class="footer-tl1">
                     <div class="footer-courses">
