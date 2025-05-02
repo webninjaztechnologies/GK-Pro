@@ -1265,6 +1265,9 @@ header.scrolled {
 body.overflow{
     overflow: hidden;
 }
+.ds-con-tab .cust-tutor-tabs-it .tutor-course-content-title{
+    display: none;
+}
 @media (max-width: 1200px) {
     .lower-tab-content .controls::after{
         width: 81%;

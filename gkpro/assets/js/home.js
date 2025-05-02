@@ -479,24 +479,6 @@ $(document).ready(function(){
     });
 });
 
-// $(document).ready(function(){
-//     $(".faqshow-more").click(function(){
-//         var content = $(".course-faq-body");
-//         var btnText = $(".faqshow-more span");
-
-//         if (content.hasClass("active")) {
-//             // Collapse
-//             content.removeClass("active").animate({ height: "410px" }, 500);
-//             btnText.text("Show More");
-//         } else {
-//             // Expand
-//             content.addClass("active").animate({ height: content.get(0).scrollHeight }, 500, function() {
-//                 content.css("height", "auto"); // Ensure height stays auto after expanding
-//             });
-//             btnText.text("Show Less");
-//         }
-//     });
-// });
 $(document).ready(function(){
     $(".faqshow-more").click(function(){
         var content = $(".course-faq-body");

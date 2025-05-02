@@ -210,7 +210,7 @@ add_filter('tutor_dashboard/nav_items', 'remove_dashboard_links');
 function remove_dashboard_links($links){
     unset($links['reviews']);
     unset($links['wishlist']);
-    unset($links['calendar']);
+    // unset($links['calendar']);
     return $links;
 }
 
@@ -315,6 +315,17 @@ add_filter('tutor_dashboard/nav_items', function($items) {
     ];
     return $items;
 });
+add_filter('tutor_dashboard/nav_items', function($items) {
+    $items['Events'] = [
+        'title' => __('Events', 'tutor'),
+        'icon' => 'dashicons-video-alt3',
+        'url' => tutor_utils()->get_tutor_dashboard_page_permalink('events'),
+        'order' => 1
+    ];
+    return $items;                                                
+});
+
+
 
 
 
